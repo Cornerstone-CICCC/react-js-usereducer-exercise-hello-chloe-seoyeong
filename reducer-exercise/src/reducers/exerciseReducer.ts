@@ -14,7 +14,7 @@ export const exerciseReducer = (state: State, action: Action): State => {
     case "increase":
       return { ...state, fSize: state.fSize + 1 };
     case "decrease":
-      return { ...state, fSize: state.fSize - 1 };
+      return { ...state, fSize: state.fSize > 1 ? state.fSize - 1 : 1 };
     default:
       return state;
   }
